@@ -51,13 +51,13 @@
 
     // Get the ul for the posts to display
     // Set the URL for your WP API Root (ie https://www.example.dev/wp-json/)
-    const   container = document.getElementById( '__CHANGE__' ),
-            wpRestUrl = '__CHANGE__';
+    const   container = document.getElementById( 'main' ),
+            wpRestUrl = 'http://localhost/wordpress/wp-json/';
 
     (function init(){
 
         // Call getPosts();
-        __CHANGE__;
+        getPosts();
 
     })();
 
@@ -67,18 +67,19 @@
         // Append 'wp/v2/posts' to wpRestUrl
         // Get only 3 posts
         axios({
-            method: '__CHANGE__',
-            url: wpRestUrl + '__CHANGE__',
+            method: 'get',
+            url: wpRestUrl + 'wp/v2/posts',
             params: {
-                per_page: __CHANGE__
+                per_page: 3
             }
         })
             .then( function( response ) {
+
                 // Loop through the response.data
-                for( let post of __CHANGE__ ) {
+                for( let post of response.data ) {
 
                     // Pass post to the
-                    renderPost( __CHANGE__ );
+                    renderPost( post );
 
                 }
 
@@ -89,19 +90,19 @@
     function renderPost( post ) {
 
         // Create an h2 element node
-        var h2 = document.createElement( '__CHANGE__' ),
+        var h2 = document.createElement( 'h2' ),
             markup = '';
 
         // Set the markup to a link with the post title inside
         // Set the link to post.link
         // Set the title to post.title.rendered
-        markup = `<a href="${__CHANGE__}">${__CHANGE__}</a>`;
+        markup = `<a href="${post.link}">${post.title.rendered}</a>`;
 
         // Set markup equal to the innerHTML of the h2
-        __CHANGE__.innerHTML = __CHANGE__;
+        h2.innerHTML = markup;
 
         // Append the h2 to the container
-        container.appendChild( __CHANGE__ );
+        container.appendChild( h2 );
 
     }
 
