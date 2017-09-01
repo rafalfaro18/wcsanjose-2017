@@ -63,33 +63,33 @@
   // Get Main Wrapper
   var container = document.getElementById('posts'),
   // Create HTML Elements
-      article     = document.createElement(''),
-      header      = document.createElement(''),
-      link        = document.createElement(''),
-      content     = document.createElement(''),
-      contentP    = document.createElement(''),
+      article     = document.createElement('article'),
+      header      = document.createElement('h2'),
+      link        = document.createElement('a'),
+      content     = document.createElement('div'),
+      contentP    = document.createElement('p'),
   // Create Text Nodes
-      headerText  = document.createTextNode(''),
-      pText       = document.createTextNode('');
+      headerText  = document.createTextNode('Post Title'),
+      pText       = document.createTextNode('Lorem here.');
 
   // Add post attributes
-  article.classList.add('');
-  header.classList.add('');
+  article.classList.add('article');
+  header.classList.add('header');
   link.href = '#link';
-  content.classList.add('');
+  content.classList.add('content');
 
   // Append Header Nodes
-  link.appendChild(  );
-  header.appendChild(  );
-  article.appendChild(  );
+  link.appendChild( headerText );
+  header.appendChild( link );
+  article.appendChild( header );
 
   // Append Content Nodes
-  contentP.appendChild(  );
-  content.appendChild(  );
-  article.appendChild(  );
+  contentP.appendChild( pText );
+  content.appendChild( contentP );
+  article.appendChild( content );
 
   // Append Article to Page
-  container.appendChild(  );
+  container.appendChild( article );
 
 
 </script>
