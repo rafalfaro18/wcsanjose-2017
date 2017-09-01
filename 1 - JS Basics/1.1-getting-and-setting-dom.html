@@ -55,11 +55,11 @@
     'use strict';
     
     // Get the nodes for the variables below
-    var siteTitle = '__CHANGE__',
-        pageTitle = '__CHANGE__',
-        pageContent = '__CHANGE__',
-        username = '__CHANGE__',
-        pTags = '__CHANGE__';
+    var siteTitle = document.getElementsByClassName('site-title'),
+        pageTitle = document.getElementsByClassName('entry-title'),
+        pageContent = document.getElementsByClassName('entry-content'),
+        username = document.getElementById('username'),
+        pTags = document.getElementsByTagName('p');
 
     // This code will display the nodes in the Console
     console.log( 'Site Title: ', siteTitle );
