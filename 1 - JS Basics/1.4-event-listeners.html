@@ -57,27 +57,27 @@
 <script type="text/javascript">
 
     // Get all of the title links
-    var links = document.querySelectorAll( '__CHANGE__' );
+    var links = document.querySelectorAll( 'h2 a' );
 
     // Loop through all of the links
-    for ( let link of __CHANGE__ ) {
+    for ( let link of links ) {
 
         // Add event listerns to each link
         // Connect listener to handleClick function
-        __CHANGE__.addEventListener( 'click', __CHANGE__ );
+        link.addEventListener( 'click', handleClick );
 
     }
 
     // Function to handle link clicks
     // Pass in the event object as a parameter
-    function handleClick( __CHANGE__ ) {
+    function handleClick( event ) {
 
         // Get the title of the link clicked
-        var title = __CHANGE__,
-            container = document.getElementById('__CHANGE__');
+        var title = event.target.innerText,
+            container = document.getElementById('clicked-title');
 
         // Prevent the link from going anywhere
-        event.__CHANGE__();
+        event.preventDefault();
 
         // Use of template strings
         container.innerHTML = `<p>Clicked Title: ${title}</p>`;
